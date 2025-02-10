@@ -47,15 +47,6 @@
     - `validators.js`: Validation functions for input data.
     - `constants.js`: Constants used across the application (e.g., role names, status codes).
 
-### **tests/**
-- Contains unit and integration tests.
-    - `unit/`: Unit tests for individual components.
-        - `auth.test.js`: Unit tests for authentication.
-        - `task.test.js`: Unit tests for tasks.
-    - `integration/`: Integration tests for combined components.
-        - `auth.test.js`: Integration tests for authentication.
-        - `task.test.js`: Integration tests for tasks.
-
 ### **logs/**
 - Log files (if using file-based logging).
     - `error.log`: Error logs.
