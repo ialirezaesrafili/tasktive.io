@@ -1,11 +1,16 @@
+// application imports
 import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+
+// config imports
 import envInstance from "../config/env.js";
 import dbConnection from "../config/db.js";
+import AppRoutes from "./app.routes.js";
 
 
+// main function
 async function application() {
     const app = express();
     const PORT = envInstance.port;
@@ -24,8 +29,15 @@ async function application() {
     app.use(bodyParser.json());
     app.use(cookieParser());
 
+    app.get('/', (req, res) => {
+        res.status(200).send({
+            status: 'success',
+            message: '[test] is alive!',
+        })
+    })
+    app.use('/api', AppRoutes)
     app.listen(PORT, () => {
-        console.log(`App listening on port ${PORT}`);
+        console.log(`App listening on http://localhost:${PORT}`);
     });
 
 }
